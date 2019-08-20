@@ -1,21 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { environment } from '../environments/environment';
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { environment } from "../environments/environment";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { AppComponent } from './app.component';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireStorageModule } from "@angular/fire/storage";
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
+
+import { AppRoutingModule } from "./app-routing.module";
+
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./components/login/login.component";
+import { VPlayerComponent } from './components/v-player/v-player.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, VPlayerComponent, LoginComponent, VPlayerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,4 +31,4 @@ import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,12 @@
+<div style="width: 500px; height: 700px; margin: 0 auto; margin-top: 50px;">
+  <ngx-auth-firebaseui
+    providers="[]"
+    [guestEnabled]="false"
+    (onSuccess)="printUser($event)"
+    (onError)="printError()">
+  </ngx-auth-firebaseui>
+</div>
+
+<div>
+  <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+</div>

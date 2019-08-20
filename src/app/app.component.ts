@@ -5,12 +5,4 @@ import { Component } from "@angular/core";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-  printUser(event) {
-    console.log(event);
-  }
-
-  printError(event) {
-    console.error(event);
-  }
-}
+export class AppComponent { }
