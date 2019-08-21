@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-v-player',
@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
 })
 export class VPlayerComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor (
+    private auth: AuthService
+  ) {}
 
   ngOnInit() {
   }
 
   onSignOut() {
-    this.router.navigate(['login']);
+    this.auth.signOut();
   }
 
 }

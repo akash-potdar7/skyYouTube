@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { VPlayerComponent } from './components/v-player/v-player.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: VPlayerComponent
+    component: VPlayerComponent,
+    canActivate: [ AuthGuard ]
   }
 ];
 

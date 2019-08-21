@@ -16,6 +16,8 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { VPlayerComponent } from './components/v-player/v-player.component';
 
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [AppComponent, VPlayerComponent, LoginComponent, VPlayerComponent],
   imports: [
@@ -28,7 +30,7 @@ import { VPlayerComponent } from './components/v-player/v-player.component';
     AngularFireStorageModule,
     NgxAuthFirebaseUIModule.forRoot(environment.firebase)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ AuthService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {}
