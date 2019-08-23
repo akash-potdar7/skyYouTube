@@ -34,16 +34,16 @@ export class AuthService {
 
   async signIn(user) {
     await this.updateUserData(user);
-    this.router.navigate(['home']);
+    this.router.navigate(['/home']);
   }
 
-  private updateUserData({uid, providerData}) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`user/${uid}`);
+  private updateUserData({uid, email, displayName}) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${uid}`);
     const data: User = {
       uid: uid,
-      email: providerData.email,
-      displayName: providerData.displayName
-    }
+      email: email,
+      displayName: displayName
+    };
     return userRef.set(data, {merge: true});
   }
 
